@@ -32,7 +32,7 @@ def encryption():
     while True:
         p('―――――――――――――――――――――')
         try:
-            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
+            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】monoalphabetic\n【𝟰】Play fair\n【99】Back  \n▶ Enter your choice : ", 'cyan')))
             p('―――――――――――――――――――――')
             if cypher == 1:
                 def encrypt_caesar(plaintext, shift):
@@ -200,7 +200,7 @@ def decryption():
     while True:
         try:
             p('―――――――――――――――――――――')
-            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】Monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
+            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】Monoalphabetic\n【𝟰】Play fair\n【99】Back  \n▶ Enter your choice : ", 'cyan')))
             p('―――――――――――――――――――――')
             if cypher == 1:
                 def decrypt_caesar(ciphertext, shift):
@@ -383,7 +383,7 @@ def main():
     """)
     while True:
         try:
-            fun = int(input(color("【𝟭】Encryption \n【𝟮】Decryption \n【𝟯】Hash \n【𝟰】Exit \nEnter your choice : ", 'cyan')))
+            fun = int(input(color("【𝟭】Encryption \n【𝟮】Decryption \n【𝟯】Hash \n【𝟰】Exit \n▶ Enter your choice : ", 'cyan')))
             if fun == 1:
                 encryption()
                 p('―――――――――――――――――――――')
