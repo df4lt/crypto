@@ -2,7 +2,7 @@ import hashlib
 import re
 import pyfiglet
 import time
-from colorama import init, Fore, Style
+from colorama import init, Style
 import math
 init()
 
@@ -46,10 +46,10 @@ def encryption():
                             encrypted_text += char
                     return encrypted_text
 
-                plaintext = input("enter the message : ")
+                plaintext = input("Enter message : ")
                 shift = int(input("Please enter an amount the shift : "))
                 encrypted_text = encrypt_caesar(plaintext, shift)
-                p("Encrypted text : " + encrypted_text)
+                p("Cypher text : " + encrypted_text)
 
             elif cypher == 2:
                 class RotorCipher:
@@ -87,10 +87,10 @@ def encryption():
 
                 cipher = RotorCipher(rotor_settings)
 
-                plaintext = input("enter the message : ")
+                plaintext = input("Enter message : ")
 
                 encrypted_text = cipher.encrypt(plaintext)
-                p("Encrypted text : " + encrypted_text)
+                p("Cypher text : " + encrypted_text)
 
             elif cypher == 3:
                 def monoalphabetic_cipher_encrypt(plaintext):
@@ -115,9 +115,9 @@ def encryption():
 
                     return ciphertext
 
-                plaintext = input("enter the message : ")
+                plaintext = input("Enter message : ")
                 encrypted_text = monoalphabetic_cipher_encrypt(plaintext)
-                p("Encrypted text : " + encrypted_text)
+                p("Cypher text : " + encrypted_text)
 
             elif cypher == 4:
                 def generate_playfair_matrix(key):
@@ -184,11 +184,11 @@ def encryption():
 
                     return cipher_text
 
-                key = input("Enter the key : ")
-                plaintext = input("enter the message : ")
+                plaintext = input("Enter message : ")
+                key = input("Enter key : ")
 
                 cipher_text = encrypt(plaintext, key)
-                p("Encrypted text : " + cipher_text)
+                p("Cypher text : " + cipher_text)
             elif cypher == 99:
                 return 0
         except ValueError:
@@ -200,7 +200,7 @@ def decryption():
     while True:
         try:
             p('―――――――――――――――――――――')
-            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
+            cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】Monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
             p('―――――――――――――――――――――')
             if cypher == 1:
                 def decrypt_caesar(ciphertext, shift):
@@ -214,8 +214,8 @@ def decryption():
                             decrypted_text += char
                     return decrypted_text
 
-                encrypted_text = input("enter the cypher text : ")
-                shift = int(input("Enter shift : "))
+                encrypted_text = input("Enter ciphertext: ")
+                shift = int(input("Please enter an amount the shift : "))
                 decrypted_text = decrypt_caesar(encrypted_text, shift)
                 p("Decrypted text : " + decrypted_text)
 
@@ -255,7 +255,7 @@ def decryption():
 
                 cipher = RotorCipher(rotor_settings)
 
-                ciphertext = input("Enter the ciphertext: ")
+                ciphertext = input("Enter ciphertext: ")
                 plaintext = cipher.decrypt(ciphertext)
 
                 p("Decrypted text : " + plaintext)
@@ -285,7 +285,7 @@ def decryption():
 
                     return plaintext
 
-                encrypted_text = input("enter the message : ")
+                encrypted_text = input("Enter ciphertext: ")
                 decrypted_text = monoalphabetic_cipher_decrypt(encrypted_text)
                 p("Decrypted text : " + decrypted_text)
 
@@ -323,8 +323,8 @@ def decryption():
                         i += 2
                     p("Decrypted text : " + plaintext)
 
-                cipher_text = input("Enter the ciphertext: ")
-                key = input("Enter the key : ")
+                cipher_text = input("Enter ciphertext: ")
+                key = input("Enter key : ")
                 decrypt(cipher_text, key)
 
             elif cypher == 99:
@@ -351,7 +351,7 @@ def gradient_print(text):
     print(reset_color)
 
 def p(text):
-    from colorama import init, Fore, Back, Style
+    from colorama import init, Fore, Style
     init()
     phosphor_green = Fore.GREEN
     sky_blue = Fore.BLUE
@@ -374,7 +374,7 @@ def logo():
 
 def main():
     logo()
-    p("""Dedicated to encryption,decryption,and hash type 
+    gradient_print("""Dedicated to encryption,decryption,and hash type 
     ╔═════════════════════════════════╗
     ║ ▶  Designer    :      Yuosuf    ║
     ║ ▶  Telegram    :      v9x_3     ║
@@ -383,7 +383,7 @@ def main():
     """)
     while True:
         try:
-            fun = int(input(color("【𝟭】encryption \n【𝟮】decryption \n【𝟯】hash \n【𝟰】Exit \nEnter your choice : ", 'cyan')))
+            fun = int(input(color("【𝟭】Encryption \n【𝟮】Decryption \n【𝟯】Hash \n【𝟰】Exit \nEnter your choice : ", 'cyan')))
             if fun == 1:
                 encryption()
                 p('―――――――――――――――――――――')
