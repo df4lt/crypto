@@ -30,10 +30,10 @@ def hash_types(hash_value):
 
 def encryption():
     while True:
-        p('_________________________________')
+        p('―――――――――――――――――――――')
         try:
             cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             if cypher == 1:
                 def encrypt_caesar(plaintext, shift):
                     encrypted_text = ""
@@ -192,16 +192,16 @@ def encryption():
             elif cypher == 99:
                 return 0
         except ValueError:
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             p("Please enter a valid choice (1, 2, 3, 4, or 99)")
 
 
 def decryption():
     while True:
         try:
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             cypher = int(input(color("【𝟭】Caesar\n【𝟮】Rotor Cipher\n【𝟯】monoalphabetic\n【𝟰】Play fair\n【99】Back  \nEnter your choice : ", 'cyan')))
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             if cypher == 1:
                 def decrypt_caesar(ciphertext, shift):
                     decrypted_text = ""
@@ -332,7 +332,7 @@ def decryption():
             else:
                 p("Enter a valid value!!")
         except ValueError:
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             p("Please enter a valid choice (1, 2, 3, 4, or 99)")
 
 
@@ -386,29 +386,42 @@ def main():
             fun = int(input(color("【𝟭】encryption \n【𝟮】decryption \n【𝟯】hash \n【𝟰】Exit \nEnter your choice : ", 'cyan')))
             if fun == 1:
                 encryption()
-                p('_________________________________')
+                p('―――――――――――――――――――――')
             elif fun == 2:
                 decryption()
-                p('_________________________________')
+                p('―――――――――――――――――――――')
             elif fun == 3:
                 while True:
                     hash_value = input("Enter the hash value: ")
                     hash_type = hash_types(hash_value)
                     p("Hash type: " + hash_type)
-                    p('_________________________________')
+                    p('―――――――――――――――――――――')
                     z=input("Do you want to go back?(y/n)")
                     if z == 'y':
                         break
             elif fun == 4:
+                def last(text):
+                    parts = len(text)
+                    for i, char in enumerate(text):
+                        ratio = i / (parts - 1)
+                        r = int(ratio * 255)
+                        g = 255
+                        b = int((1 - ratio) * 255)
+                        color = f"\033[38;2;{r};{g};{b}m"
+                        print(color + char, end='', flush=True)
+                        time.sleep(0.07)
+                    reset_color = Style.RESET_ALL
+                    print(reset_color)
+                last('Let me see you later')
                 break
             else :
-                p('_________________________________')
+                p('―――――――――――――――――――――')
                 p("Please enter a valid choice (1, 2, 3, or 4)")
-                p('_________________________________')
+                p('―――――――――――――――――――――')
         except ValueError:
-            p('_________________________________')
+            p('―――――――――――――――――――――')
             p("Please enter a valid choice (1, 2, 3, or 4)")
-            p('_________________________________')
+            p('―――――――――――――――――――――')
 
 main()
 
